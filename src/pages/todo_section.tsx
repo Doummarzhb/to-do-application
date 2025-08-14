@@ -65,16 +65,17 @@ const TodoSection: React.FC = () => {
                   className="w-5 h-5 accent-[#4fa1f3] cursor-pointer"
                 />
                 <span
-                  className={`transition ${
-                    task.done
-                      ? "line-through opacity-50"
-                      : task.hidden
-                      ? "italic opacity-50"
-                      : ""
-                  }`}
-                >
-                  {task.hidden ? "Hidden Task" : task.text}
-                </span>
+  className={`transition ${
+    task.done
+      ? "line-through text-gray-400"
+      : task.hidden
+      ? "italic opacity-50"
+      : ""
+  }`}
+>
+  {task.hidden ? "Hidden Task" : task.text}
+</span>
+
               </div>
               <div className="flex items-center gap-1">
                 <IconButton
@@ -98,22 +99,23 @@ const TodoSection: React.FC = () => {
 
         {/* Add New Note */}
         <div
-          className="w-[1120px] h-[80px] rounded-[10px] px-[30px] py-[16px] bg-[#2E3239] flex items-center gap-[4px] mt-auto"
-        >
-          <input
-            type="text"
-            placeholder="New Note"
-            value={newTask}
-            onChange={(e) => setNewTask(e.target.value)}
-            className="flex-1 h-[50px] px-4 rounded-lg bg-[#1f2227] text-white placeholder-gray-400 focus:outline-none"
-          />
-          <button
-            onClick={handleAdd}
-            className="w-[161px] h-[48px] bg-[#F4F6FA] text-black rounded-[9px] font-medium hover:bg-gray-200 transition px-[24px] py-[12px] gap-[10px]"
-          >
-            Add New Note
-          </button>
-        </div>
+  className="w-[1120px] h-[80px] rounded-[10px] px-[30px] py-[16px] bg-[#2E3239] flex items-center gap-[4px] mt-auto"
+>
+  <input
+    type="text"
+    placeholder="New Note"
+    value={newTask}
+    onChange={(e) => setNewTask(e.target.value)}
+    className="flex-1 h-[50px] px-4 rounded-lg bg-[#2E3239] text-white placeholder-gray-400 focus:outline-none border-none"
+  />
+  <button
+    onClick={handleAdd}
+    className="w-[161px] h-[48px] bg-[#F4F6FA] text-black rounded-[9px] font-medium hover:bg-gray-200 transition px-[24px] py-[12px] gap-[10px]"
+  >
+    Add New Note
+  </button>
+</div>
+
 
         {/* Snackbar Notification */}
         <Snackbar
