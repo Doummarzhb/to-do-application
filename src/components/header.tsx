@@ -10,7 +10,7 @@ const Header: React.FC = () => {
       "
     >
         
-    {/* flex flex-col justify-between */}
+   
       {/* <div className="flex flex-col"> */}
      
         <h1
@@ -32,7 +32,7 @@ const Header: React.FC = () => {
         >
           Stop Procrastinating , Start Organizing
         </p>
-      {/* </div> */}
+     
 
 
       <div className="w-[1120px] h-0 border border-[#F4F6FA] opacity-10" />

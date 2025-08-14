@@ -3,6 +3,7 @@ export interface Task {
     text: string;
     hidden: boolean;
     done: boolean;
+    priority: "High" | "Medium" | "Low";
   }
   
   export interface TodoListProps {
@@ -10,6 +11,9 @@ export interface Task {
     onToggleDone: (id: number) => void;
     onToggleHide: (id: number) => void;
     onDelete: (id: number) => void;
+    onEditTask: (id: number, newText: string) => void; 
+    onChangePriority: (id: number, newPriority: string) => void;
+    setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
   }
   
   export interface TodoItemProps {
@@ -17,6 +21,8 @@ export interface Task {
     onToggleDone: (id: number) => void;
     onToggleHide: (id: number) => void;
     onDelete: (id: number) => void;
+    onEditTask: (id: number, newText: string) => void; 
+    onChangePriority: (id: number, newPriority: string) => void;
   }
   
   export interface TodoInputProps {
