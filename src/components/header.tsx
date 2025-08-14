@@ -6,8 +6,7 @@ const Header: React.FC = () => {
       className="
       max-w-[1120px] h-[54px]
         mx-auto
-        px-4
-      "
+        px-4"
     >
         
    

@@ -5,6 +5,7 @@ import type {  TodoInputProps } from '../types/task';
 
 const TodoInput: React.FC<TodoInputProps> = ({ onAdd }) => {
   const [text, setText] = useState("");
+  
 
   const handleAddClick = () => {
     if (text.trim() !== "") {

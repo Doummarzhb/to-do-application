@@ -5,7 +5,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import EditIcon from "@mui/icons-material/Edit";
 import SaveIcon from "@mui/icons-material/Save";
-import FlagIcon from "@mui/icons-material/Flag";
+// import FlagIcon from "@mui/icons-material/Flag";
 import type { TodoItemProps } from "../types/task";
 
 const priorityColors: Record<string, string> = {
@@ -29,6 +29,8 @@ const TodoItem: React.FC<TodoItemProps> = ({
     onEditTask(task.id, editedText);
     setIsEditing(false);
   };
+
+  
 
   return (
     <div className="flex items-center justify-between px-4 py-3 rounded-lg text-[#F4F6FA] transition mb-10">

@@ -16,12 +16,13 @@ import type { TodoListProps } from "../types/task";
 
 const TodoList: React.FC<TodoListProps> = ({
   tasks,
+  onReorder,
   onToggleDone,
   onToggleHide,
   onDelete,
   onEditTask,
   onChangePriority,
-  setTasks,
+
 }) => {
   const handleDragEnd = (result: DropResult) => {
     if (!result.destination) return;
@@ -29,7 +30,7 @@ const TodoList: React.FC<TodoListProps> = ({
     const reordered = Array.from(tasks);
     const [moved] = reordered.splice(result.source.index, 1);
     reordered.splice(result.destination.index, 0, moved);
-    setTasks(reordered);
+    onReorder(reordered); 
   };
 
   return (
@@ -39,7 +40,7 @@ const TodoList: React.FC<TodoListProps> = ({
           <div
             ref={dropProvided.innerRef}
             {...dropProvided.droppableProps}
-            className="flex flex-col gap-5"
+            className="flex flex-col gap-[20px]"
           >
             {tasks.map((task, index) => (
               <Draggable

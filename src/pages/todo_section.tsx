@@ -41,7 +41,7 @@ const TodoSection: React.FC = () => {
   const handleChangePriority = (id: number, newPriority: string) => {
     setTasks(tasks.map(t => t.id === id ? { ...t, priority: newPriority as Task["priority"] } : t));
   };
-
+ 
   return (
     <Layout>
       <div className="max-w-[1120px] h-[340px] w-full flex flex-col gap-[20px] mx-auto px-4">
@@ -49,12 +49,13 @@ const TodoSection: React.FC = () => {
         <div className="flex flex-col gap-[44px]"> <div className="mt-8"> </div>
         <TodoList 
           tasks={tasks} 
+          onReorder={setTasks} 
           onToggleDone={handleToggleDone} 
           onToggleHide={handleToggleHide}
            onDelete={handleDelete} 
              onEditTask={handleEditTask}
           onChangePriority={handleChangePriority}
-          setTasks={setTasks}
+           
 
           />
         <TodoInput  onAdd={handleAdd}/></div>
