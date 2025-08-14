@@ -51,7 +51,7 @@ const TodoSection: React.FC = () => {
 
 
     <Layout>
-      <div className="w-[1120px] h-[340px] flex flex-col gap-[20px] mx-auto">
+      <div className="max-w-[1120px] h-[340px] w-full flex flex-col gap-[20px] mx-auto px-4 ">
         {/* Tasks List */}
         <div className="flex flex-col gap-3">
           {tasks.map((task) => (
