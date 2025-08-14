@@ -1,26 +1,43 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+  
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
-  };
-
+    const handleLogin = (e: React.FormEvent) => {
+        e.preventDefault();
+      
+        const storedUser = localStorage.getItem("user");
+        if (!storedUser) {
+          alert("No account found! Please register first.");
+          return;
+        }
+      
+        const { email: storedEmail, password: storedPassword } = JSON.parse(storedUser);
+      
+        if (email === storedEmail && password === storedPassword) {
+          localStorage.setItem("isLoggedIn", "true");  
+          navigate("/todo_section");
+        } else {
+          alert("Invalid email or password!");
+        }
+      };
   return (
     <Layout>
       
-      <div className="flex items-center justify-center min-h-screen bg-[#23262C]">
+      <div className="flex items-center justify-center   bg-[#23262C]">
   <div
     className="
       w-[1120px] h-[438px]
       flex flex-col gap-[30px]
       bg-transparent
       items-center
+      pt-[20px]
     "
   >
     <h2

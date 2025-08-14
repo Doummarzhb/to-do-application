@@ -12,7 +12,7 @@ const Header: React.FC = () => {
         
     {/* flex flex-col justify-between */}
       {/* <div className="flex flex-col"> */}
-      {/* <div className="flex flex-col"> */}
+     
         <h1
           className="
             text-[#F4F6FA]

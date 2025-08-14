@@ -8,33 +8,40 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const navigate = useNavigate(); // ✅ الصح
+  const navigate = useNavigate();  
 
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault();
-
+  
     if (password !== confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
-
-    console.log("Email:", email);
-    console.log("Password:", password);
-    console.log("Confirm Password:", confirmPassword);
-
+  
+    const userData = {
+      email,
+      password
+    };
+    localStorage.setItem("user", JSON.stringify(userData));
+    localStorage.setItem("isLoggedIn", "true"); 
+  
+    alert("Account created successfully!");
+    
+     
     navigate("/todo_section");
   };
   
 
   return (
     <Layout>
-      <div className="flex items-center justify-center min-h-screen bg-[#23262C]">
+      <div className="flex items-center justify-center   bg-[#23262C]">
         <div
           className="
             w-[1120px] h-auto
             flex flex-col gap-[30px]
             bg-transparent
             items-center
+            pt-[20px]
           "
         >
           <h2
