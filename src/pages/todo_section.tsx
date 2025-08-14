@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Layout from "../components/Layout";
 import Snackbar from "@mui/material/Snackbar";
 import IconButton from "@mui/material/IconButton";
-import DeleteIcon from "@mui/icons-material/Delete";
+import DeleteOutlineIcon  from "@mui/icons-material/Delete";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
@@ -65,7 +65,7 @@ const TodoSection: React.FC = () => {
   type="checkbox"
   checked={task.done}
   onChange={() => handleToggleDone(task.id)}
-  className="w-6 h-6 accent-[#4fa1f3] cursor-pointer"
+  className="w-6 h-6 bg-[#2E3239] accent-[#B4B4B4] cursor-pointer border border-[#555]"
 />
 <span
   className={`font-normal text-base leading-none transition ${
@@ -83,17 +83,17 @@ const TodoSection: React.FC = () => {
               <div className="flex items-center gap-1">
                 <IconButton
                   size="small"
-                  sx={{ color: "#F4F6FA"  }}
+                  sx={{ color: "#8C8E93"  }}
                   onClick={() => handleToggleHide(task.id)}
                 >
                   {task.hidden ? <VisibilityOffIcon /> : <VisibilityIcon />}
                 </IconButton>
                 <IconButton
                   size="small"
-                  sx={{ color: "#F4F6FA"  }}
+                  sx={{ color: "#8C8E93"  }}
                   onClick={() => handleDelete(task.id)}
                 >
-                  <DeleteIcon />
+                  <DeleteOutlineIcon  />
                 </IconButton>
               </div>
             </div>
