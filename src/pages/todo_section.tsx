@@ -4,14 +4,8 @@ import Snackbar from "@mui/material/Snackbar";
 import TodoList from "../components/todolist";
 import TodoInput from "../components/todoinput";
  
-
-interface Task {
-  id: number;
-  text: string;
-  hidden: boolean;
-  done: boolean;
-}
-
+import type {Task } from '../types/task';
+ 
 const TodoSection: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([
     { id: 1, text: "Complete presentation for team meeting on Friday", hidden: false, done: false },
@@ -44,8 +38,8 @@ const TodoSection: React.FC = () => {
     <Layout>
       <div className="max-w-[1120px] h-[340px] w-full flex flex-col gap-[20px] mx-auto px-4">
         <hr className="border-t border-gray-500 my-4" />
-        <TodoList tasks={tasks} onToggleDone={handleToggleDone} onToggleHide={handleToggleHide} onDelete={handleDelete} />
-        <TodoInput onAdd={handleAdd} />
+        <div className="flex flex-col gap-[44px]"> <div className="mt-8"> </div><TodoList   tasks={tasks} onToggleDone={handleToggleDone} onToggleHide={handleToggleHide} onDelete={handleDelete} />
+        <TodoInput  onAdd={handleAdd}  /></div>
         <Snackbar
           open={snackbar.open}
           autoHideDuration={2000}

@@ -17,8 +17,10 @@ const TodoItem: React.FC<TodoItemProps> = ({ task, onToggleDone, onToggleHide, o
           type="checkbox"
           checked={task.done}
           onChange={() => onToggleDone(task.id)}
-          className="w-6 h-6 bg-[#2E3239] accent-[#B4B4B4] cursor-pointer border border-[#555]"
-        />
+          className="w-[24px] h-[24px] appearance-none rounded-[5px] bg-[#2E3239] border-[1.5px] border-[#B4B4B4] cursor-pointer
+             checked:bg-[#B4B4B4] checked:border-[#B4B4B4] checked:after:content-['✓'] checked:after:text-[#2E3239] 
+             checked:after:flex checked:after:items-center checked:after:justify-center checked:after:h-full checked:after:w-full"
+/>
         <span
           className={`font-normal text-base leading-none transition ${
             task.done

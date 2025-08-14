@@ -22,3 +22,8 @@ export interface Task {
   export interface TodoInputProps {
     onAdd: (text: string) => void;
   }
+
+  export interface LayoutProps {
+    children: React.ReactNode;
+  }
+  

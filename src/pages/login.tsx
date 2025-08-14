@@ -39,7 +39,7 @@ export default function Login() {
     <form onSubmit={handleLogin} className="flex flex-col items-center gap-[30px]">
       <input
         type="email"
-        placeholder="Email"
+        placeholder="   Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         className="
@@ -54,12 +54,13 @@ export default function Login() {
       />
       <input
         type="password"
-        placeholder="Password"
+        placeholder="   Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         className="
           w-[500px] h-[80px]
           px-4
+          
           rounded-[10px]
           bg-[#2E3239] text-white
           placeholder-gray-400

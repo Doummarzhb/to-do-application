@@ -1,9 +1,6 @@
 import React from "react";
 import Header from "./header";
-
-interface LayoutProps {
-  children: React.ReactNode;
-}
+import type {LayoutProps} from '../types/task';
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (

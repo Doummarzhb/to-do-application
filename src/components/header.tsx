@@ -12,6 +12,7 @@ const Header: React.FC = () => {
         
     {/* flex flex-col justify-between */}
       {/* <div className="flex flex-col"> */}
+      <div className="flex flex-col">
         <h1
           className="
             text-[#F4F6FA]
@@ -31,7 +32,8 @@ const Header: React.FC = () => {
         >
           Stop Procrastinating , Start Organizing
         </p>
-      {/* </div> */}
+      </div>
+
 
       <div className="w-[1120px] h-0 border border-[#F4F6FA] opacity-10" />
       
