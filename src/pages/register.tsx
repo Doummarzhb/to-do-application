@@ -1,10 +1,14 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
-import { Link } from "react-router-dom";
+import { Link   } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const navigate = useNavigate(); // ✅ الصح
 
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,7 +21,10 @@ export default function Register() {
     console.log("Email:", email);
     console.log("Password:", password);
     console.log("Confirm Password:", confirmPassword);
+
+    navigate("/todo_section");
   };
+  
 
   return (
     <Layout>
@@ -59,6 +66,8 @@ export default function Register() {
                 bg-[#2E3239] text-white
                 placeholder-gray-400
                 focus:outline-none
+
+                border-none
               "
             />
 
@@ -74,6 +83,8 @@ export default function Register() {
                 bg-[#2E3239] text-white
                 placeholder-gray-400
                 focus:outline-none
+
+                border-none
               "
             />
 
@@ -89,6 +100,8 @@ export default function Register() {
                 bg-[#2E3239] text-white
                 placeholder-gray-400
                 focus:outline-none
+
+                border-none
               "
             />
 

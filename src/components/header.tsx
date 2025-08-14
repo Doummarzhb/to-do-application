@@ -5,11 +5,11 @@ const Header: React.FC = () => {
     <div
       className="
         w-[1120px] h-[54px]
-        flex flex-col justify-between
         mx-auto
       "
     >
-    
+        
+    {/* flex flex-col justify-between */}
       {/* <div className="flex flex-col"> */}
         <h1
           className="

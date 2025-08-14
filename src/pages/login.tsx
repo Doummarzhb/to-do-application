@@ -49,6 +49,7 @@ export default function Login() {
           bg-[#2E3239] text-white
           placeholder-gray-400
           focus:outline-none
+          border-none
         "
       />
       <input
@@ -63,6 +64,7 @@ export default function Login() {
           bg-[#2E3239] text-white
           placeholder-gray-400
           focus:outline-none
+          border-none
         "
       />
 
