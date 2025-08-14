@@ -15,9 +15,9 @@ interface Task {
 
 const TodoSection: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([
-    // { id: 1, text: "Complete presentation for team meeting on Friday", hidden: false, done: false },
-    // { id: 2, text: "Schedule dentist appointment for next month", hidden: false, done: false },
-    // { id: 3, text: "Buy groceries for the week", hidden: false, done: false },
+    { id: 1, text: "Complete presentation for team meeting on Friday", hidden: false, done: false },
+    { id: 2, text: "Schedule dentist appointment for next month", hidden: false, done: false },
+    { id: 3, text: "Buy groceries for the week", hidden: false, done: false },
   ]);
   const [newTask, setNewTask] = useState("");
   const [snackbar, setSnackbar] = useState<{ open: boolean; message: string }>({
@@ -53,11 +53,12 @@ const TodoSection: React.FC = () => {
     <Layout>
       <div className="max-w-[1120px] h-[340px] w-full flex flex-col gap-[20px] mx-auto px-4 ">
         {/* Tasks List */}
+        <hr className="border-t border-gray-500 my-4" />
         <div className="flex flex-col gap-3">
           {tasks.map((task) => (
             <div
               key={task.id}
-              className="flex items-center justify-between px-4 py-3 rounded-lg text-[#F4F6FA] transition"
+              className="flex items-center justify-between px-4 py-3 rounded-lg text-[#F4F6FA] transition mb-10"
             >
               <div className="flex items-center gap-3">
                 <input

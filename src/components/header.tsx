@@ -33,7 +33,7 @@ const Header: React.FC = () => {
         </p>
       {/* </div> */}
 
-      <div className="w-[1120px] h-0 border border-[#F4F6FA] opacity-10  " />
+      <div className="w-[1120px] h-0 border border-[#F4F6FA] opacity-10" />
       
     </div>
   );
