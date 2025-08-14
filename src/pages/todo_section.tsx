@@ -48,8 +48,10 @@ const TodoSection: React.FC = () => {
   };
 
   return (
+
+
     <Layout>
-      <div className="w-[1080px] h-[340px] flex flex-col gap-[20px] mx-auto">
+      <div className="w-[1120px] h-[340px] flex flex-col gap-[20px] mx-auto">
         {/* Tasks List */}
         <div className="flex flex-col gap-3">
           {tasks.map((task) => (
@@ -59,13 +61,13 @@ const TodoSection: React.FC = () => {
             >
               <div className="flex items-center gap-3">
                 <input
-                  type="checkbox"
-                  checked={task.done}
-                  onChange={() => handleToggleDone(task.id)}
-                  className="w-5 h-5 accent-[#4fa1f3] cursor-pointer"
-                />
-                <span
-  className={`transition ${
+  type="checkbox"
+  checked={task.done}
+  onChange={() => handleToggleDone(task.id)}
+  className="w-6 h-6 accent-[#4fa1f3] cursor-pointer"
+/>
+<span
+  className={`font-normal text-base leading-none transition ${
     task.done
       ? "line-through text-gray-400"
       : task.hidden
@@ -98,23 +100,22 @@ const TodoSection: React.FC = () => {
         </div>
 
         {/* Add New Note */}
-        <div
-  className="w-[1120px] h-[80px] rounded-[10px] px-[30px] py-[16px] bg-[#2E3239] flex items-center gap-[4px] mt-auto"
->
+        <div className="   rounded-[10px] px-[30px] py-[16px] bg-[#2E3239] flex items-center gap-[4px]">
   <input
     type="text"
     placeholder="New Note"
     value={newTask}
     onChange={(e) => setNewTask(e.target.value)}
-    className="flex-1 h-[50px] px-4 rounded-lg bg-[#2E3239] text-white placeholder-gray-400 focus:outline-none border-none"
+    className="flex-1 h-full px-4 rounded-lg bg-[#2E3239] text-white placeholder-gray-400 focus:outline-none border-none"
   />
   <button
     onClick={handleAdd}
-    className="w-[161px] h-[48px] bg-[#F4F6FA] text-black rounded-[9px] font-medium hover:bg-gray-200 transition px-[24px] py-[12px] gap-[10px]"
+    className="w-[161px] h-[48px] bg-[#F4F6FA] text-black rounded-[9px] font-medium hover:bg-gray-200 transition"
   >
     Add New Note
   </button>
 </div>
+
 
 
         {/* Snackbar Notification */}
