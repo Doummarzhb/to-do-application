@@ -1,5 +1,46 @@
 # React + TypeScript + Vite
 
+# 📝 To Do App
+
+A simple and practical **To Do App** built with **React + TypeScript + Vite**, featuring a modern design and an easy-to-use interface.
+
+---
+
+## 🚀 Features
+- ➕ **Add tasks** quickly and easily.
+- ✏️ **Edit tasks** and save changes.
+- 🗑️ **Delete unwanted tasks**.
+- 👁️ **Show/Hide tasks** when needed.
+- 🎯 **Set priority levels** (High / Medium / Low) with custom colors.
+- 🔄 **Drag & Drop task reordering** using **@hello-pangea/dnd**.
+- 🎨 **Responsive design** built with Tailwind CSS and Material UI.
+
+---
+🛠️ Technologies Used
+⚛ React 19
+
+📜 TypeScript
+
+⚡ Vite
+
+🎨 Tailwind CSS
+
+🎭 Material UI
+
+📦 @hello-pangea/dnd
+
+🛣️ React Router DOM
+
+
+
+
+## 🖼️ Screenshot
+> Add an image or screenshot of your app here:
+```md
+![Screenshot](./screenshot.png)
+
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
