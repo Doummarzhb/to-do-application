@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import Snackbar from "@mui/material/Snackbar";
-import IconButton from "@mui/material/IconButton";
-import DeleteOutlineIcon  from "@mui/icons-material/Delete";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import TodoList from "../components/todolist";
+import TodoInput from "../components/todoinput";
+ 
 
 interface Task {
   id: number;
@@ -19,17 +18,11 @@ const TodoSection: React.FC = () => {
     { id: 2, text: "Schedule dentist appointment for next month", hidden: false, done: false },
     { id: 3, text: "Buy groceries for the week", hidden: false, done: false },
   ]);
-  const [newTask, setNewTask] = useState("");
-  const [snackbar, setSnackbar] = useState<{ open: boolean; message: string }>({
-    open: false,
-    message: "",
-  });
+  const [snackbar, setSnackbar] = useState<{ open: boolean; message: string }>({ open: false, message: "" });
 
-  const handleAdd = () => {
-    if (newTask.trim() === "") return;
-    const task = { id: Date.now(), text: newTask, hidden: false, done: false };
+  const handleAdd = (text: string) => {
+    const task = { id: Date.now(), text, hidden: false, done: false };
     setTasks([...tasks, task]);
-    setNewTask("");
     setSnackbar({ open: true, message: "Task added successfully!" });
   };
 
@@ -48,78 +41,11 @@ const TodoSection: React.FC = () => {
   };
 
   return (
-
-
     <Layout>
-      <div className="max-w-[1120px] h-[340px] w-full flex flex-col gap-[20px] mx-auto px-4 ">
-        {/* Tasks List */}
+      <div className="max-w-[1120px] h-[340px] w-full flex flex-col gap-[20px] mx-auto px-4">
         <hr className="border-t border-gray-500 my-4" />
-        <div className="flex flex-col gap-3">
-          {tasks.map((task) => (
-            <div
-              key={task.id}
-              className="flex items-center justify-between px-4 py-3 rounded-lg text-[#F4F6FA] transition mb-10"
-            >
-              <div className="flex items-center gap-3">
-                <input
-  type="checkbox"
-  checked={task.done}
-  onChange={() => handleToggleDone(task.id)}
-  className="w-6 h-6 bg-[#2E3239] accent-[#B4B4B4] cursor-pointer border border-[#555]"
-/>
-<span
-  className={`font-normal text-base leading-none transition ${
-    task.done
-      ? "line-through text-gray-400"
-      : task.hidden
-      ? "italic opacity-50"
-      : ""
-  }`}
->
-  {task.hidden ? "Hidden Task" : task.text}
-</span>
-
-              </div>
-              <div className="flex items-center gap-1">
-                <IconButton
-                  size="small"
-                  sx={{ color: "#8C8E93"  }}
-                  onClick={() => handleToggleHide(task.id)}
-                >
-                  {task.hidden ? <VisibilityOffIcon /> : <VisibilityIcon />}
-                </IconButton>
-                <IconButton
-                  size="small"
-                  sx={{ color: "#8C8E93"  }}
-                  onClick={() => handleDelete(task.id)}
-                >
-                  <DeleteOutlineIcon  />
-                </IconButton>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Add New Note */}
-        <div className="   rounded-[10px] px-[30px] py-[16px] bg-[#2E3239] flex items-center gap-[4px]">
-  <input
-    type="text"
-    placeholder="New Note"
-    value={newTask}
-    onChange={(e) => setNewTask(e.target.value)}
-    className="flex-1 h-full px-4 rounded-lg bg-[#2E3239] text-white placeholder-gray-400 focus:outline-none border-none"
-  />
-  <button
-    onClick={handleAdd}
-    className="w-[161px] h-[48px] bg-[#F4F6FA] text-black rounded-[9px] font-medium hover:bg-gray-200 transition"
-  >
-    Add New Note
-  </button>
-</div>
-
-
-
-        {/* Snackbar Notification */}
+        <TodoList tasks={tasks} onToggleDone={handleToggleDone} onToggleHide={handleToggleHide} onDelete={handleDelete} />
+        <TodoInput onAdd={handleAdd} />
         <Snackbar
           open={snackbar.open}
           autoHideDuration={2000}
