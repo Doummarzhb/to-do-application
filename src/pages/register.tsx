@@ -10,7 +10,7 @@ export default function Register() {
 
   const navigate = useNavigate();  
 
-  const handleRegister = (e: React.FormEvent) => {
+  const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
   
     if (password !== confirmPassword) {
@@ -18,18 +18,32 @@ export default function Register() {
       return;
     }
   
-    const userData = {
-      email,
-      password
-    };
-    localStorage.setItem("user", JSON.stringify(userData));
-    localStorage.setItem("isLoggedIn", "true"); 
+    try {
+        //api in mockApi
+      const res = await fetch("https://689ef2f03fed484cf87886a9.mockapi.io/api/r1/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
   
-    alert("Account created successfully!");
-    
-     
-    navigate("/todo_section");
+      if (res.ok) {
+        alert("Account created successfully!");
+  
+        // localStorage
+        const userData = { email, password };
+        localStorage.setItem("user", JSON.stringify(userData));
+        localStorage.setItem("isLoggedIn", "true");
+  
+        navigate("/todo_section");
+      } else {
+        alert("Failed to register");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong!");
+    }
   };
+  
   
 
   return (

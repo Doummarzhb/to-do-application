@@ -9,24 +9,40 @@ export default function Login() {
     const [password, setPassword] = useState("");
   
 
-    const handleLogin = (e: React.FormEvent) => {
+    const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-      
-        const storedUser = localStorage.getItem("user");
-        if (!storedUser) {
-          alert("No account found! Please register first.");
-          return;
-        }
-      
-        const { email: storedEmail, password: storedPassword } = JSON.parse(storedUser);
-      
-        if (email === storedEmail && password === storedPassword) {
-          localStorage.setItem("isLoggedIn", "true");  
-          navigate("/todo_section");
-        } else {
-          alert("Invalid email or password!");
+    
+        try {
+          //  api
+          const res = await fetch(
+            `https://689ef2f03fed484cf87886a9.mockapi.io/api/r1/users?email=${email}`
+          );
+          const users = await res.json();
+    
+          if (users.length === 0) {
+            alert("Email not found!");
+            return;
+          }
+    
+          const user = users[0];
+    
+        
+          if (user.password === password) {
+            //  localStorage
+            localStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem("isLoggedIn", "true");
+    
+            alert("Login successful!");
+            navigate("/todo_section");
+          } else {
+            alert("Incorrect password!");
+          }
+        } catch (error) {
+          console.error(error);
+          alert("Something went wrong!");
         }
       };
+      
   return (
     <Layout>
       

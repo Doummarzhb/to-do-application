@@ -14,15 +14,55 @@ const TodoSection: React.FC = () => {
   ]);
   const [snackbar, setSnackbar] = useState<{ open: boolean; message: string }>({ open: false, message: "" });
 
-  const handleAdd = (text: string) => {
-    const task: Task = { id: Date.now(), text, hidden: false, done: false, priority: "Medium" }; // default Medium
-    setTasks([...tasks, task]);
-    setSnackbar({ open: true, message: "Task added successfully!" });
+  const handleAdd = async (text: string) => {
+    try {
+      const newTask: Task = { 
+        id: Date.now(), 
+        text, 
+        hidden: false, 
+        done: false, 
+        priority: "Medium" 
+      };
+  
+      // POST request  API for mockApi 
+      const res = await fetch("https://689ef2f03fed484cf87886a9.mockapi.io/api/r1/tasks", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newTask),
+      });
+  
+      if (!res.ok) throw new Error("Failed to save task");
+  
+      const savedTask = await res.json();
+  
+      //  state
+      setTasks([...tasks, savedTask]);
+      setSnackbar({ open: true, message: "Task added successfully!" });
+    } catch (error) {
+      console.error(error);
+      setSnackbar({ open: true, message: "Error adding task!" });
+    }
   };
+  
 
-  const handleDelete = (id: number) => {
-    setTasks(tasks.filter((t) => t.id !== id));
-    setSnackbar({ open: true, message: "Task deleted!" });
+  const handleDelete = async (id: number) => {
+    try {
+      // Delete API
+      const res = await fetch(`https://689ef2f03fed484cf87886a9.mockapi.io/api/r1/tasks/${id}`, {
+        method: "DELETE",
+      });
+  
+      if (!res.ok) throw new Error("Failed to delete task");
+  
+     
+      setTasks(tasks.filter((t) => t.id !== id));
+      setSnackbar({ open: true, message: "Task deleted!" });
+    } catch (error) {
+      console.error(error);
+      setSnackbar({ open: true, message: "Error deleting task!" });
+    }
   };
 
   const handleToggleHide = (id: number) => {
@@ -34,9 +74,30 @@ const TodoSection: React.FC = () => {
     setTasks(tasks.map((t) => (t.id === id ? { ...t, done: !t.done } : t)));
   };
 
-  const handleEditTask = (id: number, newText: string) => {
-    setTasks(tasks.map(t => t.id === id ? { ...t, text: newText } : t));
+  const handleEditTask = async (id: number, newText: string) => {
+    try {
+      // update API [put]
+      const res = await fetch(`https://689ef2f03fed484cf87886a9.mockapi.io/api/r1/tasks/${id}`, {
+        method: "PUT",  
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text: newText }),
+      });
+  
+      if (!res.ok) throw new Error("Failed to edit task");
+  
+      const updatedTask = await res.json();
+  
+      // update
+      setTasks(tasks.map((t) => (t.id === id ? updatedTask : t)));
+      setSnackbar({ open: true, message: "Task updated!" });
+    } catch (error) {
+      console.error(error);
+      setSnackbar({ open: true, message: "Error editing task!" });
+    }
   };
+  
   
   const handleChangePriority = (id: number, newPriority: string) => {
     setTasks(tasks.map(t => t.id === id ? { ...t, priority: newPriority as Task["priority"] } : t));
