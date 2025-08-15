@@ -49,7 +49,7 @@ export default function Login() {
       <div className="flex items-center justify-center   bg-[#23262C]">
   <div
     className="
-      max-w-[1120px] h-[438px]
+      w-full max-w-[1120px] h-[438px]
       flex flex-col gap-[30px]
       bg-transparent
       items-center
@@ -58,7 +58,7 @@ export default function Login() {
   >
     <h2
       className="
-        w-[106px] h-[24px]
+       w-full max- w-[106px] h-[24px]
         opacity-50
         font-normal
         text-[40px] leading-[24px] tracking-[0]
@@ -107,7 +107,7 @@ export default function Login() {
 
       <p
         className="
-          w-[470px] h-[33px]
+          w-full max-w-[470px] h-[33px]
           opacity-50 font-poppins
           text-[16px] leading-[24px] tracking-[0]
           text-[#F4F6FA]

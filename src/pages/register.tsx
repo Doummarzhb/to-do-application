@@ -51,7 +51,7 @@ export default function Register() {
       <div className="flex items-center justify-center   bg-[#23262C]">
         <div
           className="
-            w-[1120px] h-auto
+          w-full max-w-[1120px] h-auto
             flex flex-col gap-[30px]
             bg-transparent
             items-center
@@ -74,7 +74,7 @@ export default function Register() {
 
           <form
             onSubmit={handleRegister}
-            className="flex flex-col items-center gap-[30px]"
+            className="flex flex-col items-center gap-[30px]  w-full"
           >
             <input
               type="email"
@@ -82,7 +82,7 @@ export default function Register() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="
-                w-[500px] h-[80px]
+              w-full max-w-[500px] h-[80px]
                 px-4
                 rounded-[10px]
                 bg-[#2E3239] text-white
@@ -99,7 +99,7 @@ export default function Register() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="
-                w-[500px] h-[80px]
+              w-full max-w-[500px] h-[80px]
                 px-4
                 rounded-[10px]
                 bg-[#2E3239] text-white
@@ -116,7 +116,7 @@ export default function Register() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               className="
-                w-[500px] h-[80px]
+              w-full max-w-[500px] h-[80px]
                 px-4
                 rounded-[10px]
                 bg-[#2E3239] text-white
@@ -129,9 +129,9 @@ export default function Register() {
 
             <p
               className="
-                w-[470px] h-[33px]
+                w-full max-w-[470px] h-[33px]
                 opacity-50 font-poppins
-                text-[16px] leading-[24px] tracking-[0]
+                text-[16px] sm:text-[16px] leading-[24px] tracking-[0]
                 text-[#F4F6FA]
                 
               "
@@ -140,7 +140,7 @@ export default function Register() {
               <Link
                 to="/login"
                 className="
-                  font-normal text-[16px] leading-[24px]
+                  font-normal text-[16px]  sm:text-[16px] leading-[24px]
                   underline decoration-solid underline-offset-[0] decoration-[0]
                   text-[#F4F6FA]
                 "
@@ -151,7 +151,7 @@ export default function Register() {
 
             <button
               type="submit"
-              className="w-[300px] h-[50px] bg-[#F4F6FA] text-black rounded-[10px] font-medium hover:bg-gray-200 transition"
+              className="w-full max-w-[300px] h-[50px] bg-[#F4F6FA] text-black rounded-[10px] font-medium hover:bg-gray-200 transition"
             >
               Register
             </button>
