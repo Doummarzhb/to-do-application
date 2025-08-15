@@ -3,7 +3,11 @@
 ## 📝 About the Project
 A modern and responsive **To Do App** built using **React + TypeScript + Vite**, connected to **MockAPI** for real backend simulation.  
 The app allows users to manage tasks with full **CRUD** operations and a smooth drag-and-drop interface.
-save  local storage  and in mockapi
+save  local storage  and in mockApi 
+and
+create 2 branches master and feature/todo_section 
+ 
+
 ---
 
 ## 🚀 Features
