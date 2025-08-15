@@ -70,7 +70,7 @@ export default function Login() {
       Login
     </h2>
 
-    <form onSubmit={handleLogin} className="flex flex-col items-center gap-[30px] w-full px-4">
+    <form onSubmit={handleLogin} className="flex flex-col items-center gap-[30px] w-full ">
       <input
         type="email"
         placeholder="   Email"
