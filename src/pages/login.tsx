@@ -53,7 +53,7 @@ export default function Login() {
       flex flex-col gap-[30px]
       bg-transparent
       items-center
-      pt-[20px]
+      
     "
   >
     <h2
@@ -128,7 +128,7 @@ export default function Login() {
 
       <button
         type="submit"
-        className="   w-full max-w-[300px] h-[45px] sm:h-[50px]  bg-[#F4F6FA] text-black rounded-[10px] font-medium hover:bg-gray-200 transition "
+        className="w-full max-w-[300px] h-[45px] sm:h-[50px]  bg-[#F4F6FA] text-black rounded-[10px] font-medium hover:bg-gray-200 transition"
       >
         Login
       </button>

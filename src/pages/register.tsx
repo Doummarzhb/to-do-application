@@ -55,7 +55,7 @@ export default function Register() {
             flex flex-col gap-[30px]
             bg-transparent
             items-center
-            pt-[20px]
+             
           "
         >
           <h2
