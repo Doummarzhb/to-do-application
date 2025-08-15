@@ -74,7 +74,7 @@ export default function Register() {
 
           <form
             onSubmit={handleRegister}
-            className="flex flex-col items-center gap-[30px]  w-full"
+            className="flex flex-col items-center gap-[30px]  w-full px-4"
           >
             <input
               type="email"
