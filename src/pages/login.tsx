@@ -64,6 +64,7 @@ export default function Login() {
         text-[40px] leading-[24px] tracking-[0]
         text-[#FFFFFF]
         text-center
+        font-poppins
       "
     >
       Login

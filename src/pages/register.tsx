@@ -66,6 +66,7 @@ export default function Register() {
               text-[40px] leading-[24px] tracking-[0]
               text-[#FFFFFF]
               text-center
+              font-poppins
             "
           >
          Register
