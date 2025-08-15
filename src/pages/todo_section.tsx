@@ -8,8 +8,8 @@ import type {Task } from '../types/task';
  
 const TodoSection: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([
-    { id: 1, text: "Complete presentation for team meeting on Friday", hidden: false, done: false , priority: "High" },
-    { id: 2, text: "Schedule dentist appointment for next month", hidden: false, done: false , priority: "Medium" },
+    { id: 1, text: "Complete presentation for team meeting ", hidden: false, done: false , priority: "High" },
+    { id: 2, text: "Schedule dentist appointment ", hidden: false, done: false , priority: "Medium" },
     { id: 3, text: "Buy groceries for the week", hidden: false, done: false ,  priority: "Low"},
   ]);
   const [snackbar, setSnackbar] = useState<{ open: boolean; message: string }>({ open: false, message: "" });
