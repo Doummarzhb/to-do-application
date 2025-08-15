@@ -4,7 +4,7 @@ const Header: React.FC = () => {
   return (
     <div
       className="
-      max-w-[1120px] h-[54px]
+      max-w-[1120px]  
         mx-auto px-4"
     >
         

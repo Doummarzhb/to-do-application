@@ -48,16 +48,17 @@ export default function Register() {
 
   return (
     <Layout>
-      <div className="flex items-center justify-center   bg-[#23262C]">
+      <div className="flex items-center justify-center    bg-[#23262C]">
         <div
           className="
           w-full max-w-[1120px] h-auto
-            flex flex-col gap-[30px]
+            flex flex-col   gap-[30px]
             bg-transparent
             items-center
              
           "
         >
+            {/* gap-[30px] */}
           <h2
             className="
               w-auto h-[24px]
@@ -74,7 +75,7 @@ export default function Register() {
 
           <form
             onSubmit={handleRegister}
-            className="flex flex-col items-center gap-[30px]  w-full "
+            className="flex flex-col items-center gap-[20px]  w-full "
           >
             <input
               type="email"
@@ -129,7 +130,7 @@ export default function Register() {
 
             <p
               className="
-                w-full max-w-[470px] h-[33px]
+                w-full max-w-[470px]  
                 opacity-50 font-poppins
                 text-[16px] sm:text-[16px] leading-[24px] tracking-[0]
                 text-[#F4F6FA]

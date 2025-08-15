@@ -4,7 +4,7 @@ import type {LayoutProps} from '../types/task';
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#23262C] font-poppins overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-[#23262C] font-poppins overflow-hidden ">
       <div className="bg-[#23262C] text-white w-full max-w-[1280px]  min-h-screen   rounded-[32px] overflow-hidden mb-8 ">
         
         <Header />
