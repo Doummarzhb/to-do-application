@@ -49,7 +49,7 @@ export default function Login() {
       <div className="flex items-center justify-center   bg-[#23262C]">
   <div
     className="
-      max-w-[1120px] h-[438px]
+    w-full max-w-[1120px] h-[438px]
       flex flex-col gap-[30px]
       bg-transparent
       items-center
@@ -58,7 +58,7 @@ export default function Login() {
   >
     <h2
       className="
-       w-full max-w-[106px] h-[24px]
+          w-[106px] h-[24px]
         opacity-50
         font-normal
         text-[40px] leading-[24px] tracking-[0]
@@ -70,7 +70,7 @@ export default function Login() {
       Login
     </h2>
 
-    <form onSubmit={handleLogin} className="flex flex-col items-center gap-[30px]">
+    <form onSubmit={handleLogin} className="flex flex-col items-center gap-[30px] w-full">
       <input
         type="email"
         placeholder="   Email"
