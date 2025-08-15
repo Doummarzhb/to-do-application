@@ -151,7 +151,7 @@ export default function Register() {
 
             <button
               type="submit"
-              className="w-full max-w-[300px] h-[50px] bg-[#F4F6FA] text-black rounded-[10px] font-medium hover:bg-gray-200 transition"
+              className="w-full max-w-[300px] h-[45px] sm:h-[50px] bg-[#F4F6FA] text-black rounded-[10px] font-medium hover:bg-gray-200 transition"
             >
               Register
             </button>
