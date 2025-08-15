@@ -106,7 +106,7 @@ export default function Login() {
 
       <p
         className="
-           max-w-[470px] h-[33px]
+           w-[470px] h-[33px]
           opacity-50 font-poppins
           text-[16px] leading-[24px] tracking-[0]
           text-[#F4F6FA]
@@ -128,7 +128,7 @@ export default function Login() {
 
       <button
         type="submit"
-        className="w-full  w-[300px] h-[50px]  sm:h-[50px] bg-[#F4F6FA] text-black rounded-[10px] font-medium hover:bg-gray-200 transition "
+        className="   w-[300px] h-[50px]  sm:h-[50px] bg-[#F4F6FA] text-black rounded-[10px] font-medium hover:bg-gray-200 transition "
       >
         Login
       </button>
