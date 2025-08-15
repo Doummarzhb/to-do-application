@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState  } from "react";
+
+// useEffect
 import Layout from "../components/Layout";
 import Snackbar from "@mui/material/Snackbar";
 import TodoList from "../components/todolist";
@@ -7,6 +9,7 @@ import TodoInput from "../components/todoinput";
 import type {Task } from '../types/task';
  
 const TodoSection: React.FC = () => {
+    // const [tasks, setTasks] = useState<Task[]>([]);
   const [tasks, setTasks] = useState<Task[]>([
     { id: 1, text: "Complete presentation for team meeting ", hidden: false, done: false , priority: "High" },
     { id: 2, text: "Schedule dentist appointment ", hidden: false, done: false , priority: "Medium" },
@@ -14,6 +17,19 @@ const TodoSection: React.FC = () => {
   ]);
   const [snackbar, setSnackbar] = useState<{ open: boolean; message: string }>({ open: false, message: "" });
 
+//   useEffect(() => {
+//     const fetchTasks = async () => {
+//       try {
+//         const res = await fetch("https://689ef2f03fed484cf87886a9.mockapi.io/api/r1/tasks");
+//         const data = await res.json();
+//         setTasks(data);
+//       } catch (error) {
+//         console.error("Error fetching tasks", error);
+//       }
+//     };
+
+//     fetchTasks();
+//   }, []);
   const handleAdd = async (text: string) => {
     try {
       const newTask: Task = { 

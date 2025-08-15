@@ -42,7 +42,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
           onChange={() => onToggleDone(task.id)}
           className="w-[24px] h-[24px] appearance-none rounded-[5px] bg-[#2E3239] border-[1.5px] border-[#B4B4B4] cursor-pointer
             checked:bg-[#B4B4B4] checked:border-[#B4B4B4] checked:after:content-['✓'] checked:after:text-[#2E3239] 
-            checked:after:flex checked:after:items-center checked:after:justify-center checked:after:h-full checked:after:w-full"
+            checked:after:flex checked:after:items-start checked:after:justify-center checked:after:h-full checked:after:w-full"
         />
 
         {/* Text or Edit Input */}

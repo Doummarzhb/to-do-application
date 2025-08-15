@@ -5,12 +5,11 @@ const Header: React.FC = () => {
     <div
       className="
       max-w-[1120px]  
-        mx-auto px-4"
+        mx-auto px-4  "
     >
         
    
-        {/* <div className="flex flex-col space-y-0"> */}
-     
+        {/* <div className="flex flex-col gap-1"> */}
         <h1
           className="
             text-[#F4F6FA]
@@ -21,6 +20,7 @@ const Header: React.FC = () => {
         >
           TO DO APP
         </h1>
+       
         <p
           className="
             text-[#F4F6FA]
@@ -31,12 +31,12 @@ const Header: React.FC = () => {
         >
           Stop Procrastinating , Start Organizing
         </p>
+       
         {/* </div> */}
 
-
       <div className="w-[1120px] h-0 border border-[#F4F6FA] opacity-10" />
-      
-    </div>
+      </div>
+    // </div>
   );
 };
 
