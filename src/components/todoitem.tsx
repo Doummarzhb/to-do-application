@@ -34,7 +34,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
 
   return (
     <div className="flex items-center justify-between px-4 py-3 rounded-lg text-[#F4F6FA] transition mb-10">
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-[8px]">
         {/* Checkbox */}
         <input
           type="checkbox"
