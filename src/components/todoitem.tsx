@@ -40,7 +40,8 @@ const TodoItem: React.FC<TodoItemProps> = ({
           type="checkbox"
           checked={task.done}
           onChange={() => onToggleDone(task.id)}
-          className="w-[24px] h-[24px] appearance-none rounded-[5px] bg-[#2E3239] border-[1.5px] border-[#B4B4B4] cursor-pointer
+          className="w-[24px] h-[24px]    min-w-[24px] 
+          min-h-[24px]  appearance-none rounded-[5px] bg-[#2E3239] border-[1.5px] border-[#B4B4B4] cursor-pointer
             checked:bg-[#B4B4B4] checked:border-[#B4B4B4] checked:after:content-['✓'] checked:after:text-[#2E3239] 
             checked:after:flex checked:after:items-start checked:after:justify-center checked:after:h-full checked:after:w-full"
         />
