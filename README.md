@@ -1,43 +1,86 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite - To Do App
 
-# 📝 To Do App
-
-A simple and practical **To Do App** built with **React + TypeScript + Vite**, featuring a modern design and an easy-to-use interface.
+## 📝 About the Project
+A modern and responsive **To Do App** built using **React + TypeScript + Vite**, connected to **MockAPI** for real backend simulation.  
+The app allows users to manage tasks with full **CRUD** operations and a smooth drag-and-drop interface.
 
 ---
 
 ## 🚀 Features
-- ➕ **Add tasks** quickly and easily.
-- ✏️ **Edit tasks** and save changes.
-- 🗑️ **Delete unwanted tasks**.
-- 👁️ **Show/Hide tasks** when needed.
-- 🎯 **Set priority levels** (High / Medium / Low) with custom colors.
-- 🔄 **Drag & Drop task reordering** using **@hello-pangea/dnd**.
-- 🎨 **Responsive design** built with Tailwind CSS and Material UI.
+- ➕ **Add tasks** with instant API saving (POST to MockAPI).
+- ✏️ **Edit tasks** and update them in the API (PUT request).
+- 🗑️ **Delete tasks** directly from the API (DELETE request).
+- 👁️ **Show/Hide tasks** locally.
+- 🎯 **Set task priorities** (High / Medium / Low) with colored indicators.
+- 🔄 **Reorder tasks** with drag & drop using **@hello-pangea/dnd**.
+- 🎨 **Responsive design** using Tailwind CSS + Material UI.
 
 ---
-🛠️ Technologies Used
-⚛ React 19
 
-📜 TypeScript
+## 🛠️ Tech Stack
+- ⚛ **React 19**
+- 📜 **TypeScript**
+- ⚡ **Vite**
+- 🎨 **Tailwind CSS**
+- 🎭 **Material UI**
+- 📦 **@hello-pangea/dnd**
+- 🛣 **React Router DOM**
+- 🌐 **MockAPI** (for backend simulation)
 
-⚡ Vite
+---
 
-🎨 Tailwind CSS
+## 📡 API Integration
+The app is connected to **MockAPI** to simulate a backend server:  
+- **GET**: Fetch all tasks when the page loads.
+- **POST**: Add a new task.
+- **PUT**: Edit/update a task.
+- **DELETE**: Remove a task.
 
-🎭 Material UI
+API Base URL Example:  
+```bash
+# React + TypeScript + Vite - To Do App
 
-📦 @hello-pangea/dnd
+## 📝 About the Project
+A modern and responsive **To Do App** built using **React + TypeScript + Vite**, connected to **MockAPI** for real backend simulation.  
+The app allows users to manage tasks with full **CRUD** operations and a smooth drag-and-drop interface.
 
-🛣️ React Router DOM
+---
 
+## 🚀 Features
+- ➕ **Add tasks** with instant API saving (POST to MockAPI).
+- ✏️ **Edit tasks** and update them in the API (PUT request).
+- 🗑️ **Delete tasks** directly from the API (DELETE request).
+- 👁️ **Show/Hide tasks** locally.
+- 🎯 **Set task priorities** (High / Medium / Low) with colored indicators.
+- 🔄 **Reorder tasks** with drag & drop using **@hello-pangea/dnd**.
+- 🎨 **Responsive design** using Tailwind CSS + Material UI.
 
+---
 
+## 🛠️ Tech Stack
+- ⚛ **React 19**
+- 📜 **TypeScript**
+- ⚡ **Vite**
+- 🎨 **Tailwind CSS**
+- 🎭 **Material UI**
+- 📦 **@hello-pangea/dnd**
+- 🛣 **React Router DOM**
+- 🌐 **MockAPI** (for backend simulation)
 
-## 🖼️ Screenshot
-> Add an image or screenshot of your app here:
-```md
-![Screenshot](./screenshot.png)
+---
+
+## 📡 API Integration
+The app is connected to **MockAPI** to simulate a backend server:  
+- **GET**: Fetch all tasks when the page loads.
+- **POST**: Add a new task.
+- **PUT**: Edit/update a task.
+- **DELETE**: Remove a task.
+
+API Base URL Example:  
+```bash
+https://<your-mockapi-id>.mockapi.io/api/r1/users
+https://<your-mockapi-id>.mockapi.io/api/r1/tasks
+
 
 
 
