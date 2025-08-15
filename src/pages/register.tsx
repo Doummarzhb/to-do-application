@@ -112,7 +112,7 @@ export default function Register() {
 
             <input
               type="password"
-              placeholder="Confirm Password"
+              placeholder="   Confirm Password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               className="

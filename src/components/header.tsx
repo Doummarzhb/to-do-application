@@ -9,13 +9,14 @@ const Header: React.FC = () => {
     >
         
    
-        {/* <div className="flex flex-col"> */}
+        {/* <div className="flex flex-col space-y-0"> */}
      
         <h1
           className="
             text-[#F4F6FA]
             font-bold text-[24px] leading-[36px] tracking-[0]
             w-[260px] h-[36px]
+            
           "
         >
           TO DO APP

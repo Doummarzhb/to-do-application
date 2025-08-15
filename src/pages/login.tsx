@@ -81,9 +81,11 @@ export default function Login() {
           px-4
           rounded-[10px]
           bg-[#2E3239] text-white
-          placeholder-gray-400
+          placeholder-gray-[20px]
           focus:outline-none
           border-none
+          
+          
         "
       />
       <input
